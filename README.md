@@ -2,29 +2,29 @@
 
 ## What is Kafka?
 
-Each minute, billions of transactions happen in systems like Paytm.\
-How does Paytm process those transactions using Kafka?\
+Each minute, billions of transactions happen in systems like Paytm.
+How does Paytm process those transactions using Kafka?
 By sending a continuous stream of data from Paytm to Kafka servers, we
 create a real-time stream of data for processing.
 
-Kafka is a **distributed event streaming platform**.\
+Kafka is a **distributed event streaming platform**.
 We can also distribute Kafka servers across regions. For example, 3
-Kafka servers may run in 3 different regions.\
+Kafka servers may run in 3 different regions.
 If one server goes down, another server will pick up the traffic to
 avoid downtime.
 
 ## Why we need Kafka?
 
 Example: A postman delivers a letter to a home. If I am not at home, I
-may lose the letter.\
+may lose the letter.
 Here, Kafka works like a **postbox**. Even if we are not available, the
-postman leaves the letter in the postbox.\
+postman leaves the letter in the postbox.
 This ensures **no data loss**.
 
 ### Real-time Example:
 
--   App1 sends messages to App2.\
--   If App2 is down and Kafka is not used, App2 will lose the data.\
+-   App1 sends messages to App2.
+-   If App2 is down and Kafka is not used, App2 will lose the data.
 -   If Kafka is used, the message is stored until App2 is up, and then
     App2 consumes the message.
 
@@ -43,8 +43,8 @@ This ensures **no data loss**.
 
 ## How does Kafka Work?
 
-Kafka uses a **Pub/Sub Model**:\
-- **Publisher (Producer)** publishes messages/events to Kafka broker.\
+Kafka uses a **Pub/Sub Model**:
+- **Publisher (Producer)** publishes messages/events to Kafka broker.
 - **Subscriber (Consumer)** listens to Kafka broker and consumes
 messages.
 
@@ -63,21 +63,21 @@ Kafka.
 
 ### Broker
 
-A Kafka broker is a **server** that stores messages.\
+A Kafka broker is a **server** that stores messages.
 Producers publish messages to brokers, and consumers fetch messages from
 brokers.
 
 ### Cluster
 
-A group of brokers working together forms a Kafka cluster.\
+A group of brokers working together forms a Kafka cluster.
 Usually, 3 brokers are configured for fault tolerance.
 
 ### Topic
 
-Topics are like **tables** inside Kafka.\
-Example:\
-- *Booking Topic* → Booking-related messages\
-- *Payment Topic* → Payment-related messages\
+Topics are like **tables** inside Kafka.
+Example:
+- *Booking Topic* → Booking-related messages
+- *Payment Topic* → Payment-related messages
 - *Insurance Topic* → Insurance-related messages
 
 A topic is a category or classification of messages. Consumers subscribe
@@ -85,7 +85,7 @@ to the topics they need.
 
 ### Partitions
 
-Kafka splits topics into partitions for scalability.\
+Kafka splits topics into partitions for scalability.
 If 1 billion records arrive per second, a single machine cannot handle
 it.\
 So Kafka distributes data across partitions, often using
@@ -94,38 +94,38 @@ So Kafka distributes data across partitions, often using
 ### Offset
 
 Each message in a partition has a unique **sequence number** called an
-offset.\
-Offsets help consumers track where they left off.\
-Example:\
-Partition 0 → messages with offsets \[0,1,2,3,4,5,6\]\
+offset.
+Offsets help consumers track where they left off.
+Example:
+Partition 0 → messages with offsets [0,1,2,3,4,5,6\]
 If a consumer reads up to offset 3 and goes down, when it comes back it
 will continue from offset 4.
 
 ### Consumer Groups
 
 If there are 3 partitions but only 1 consumer, performance will be
-poor.\
+poor.
 To increase throughput, we create a **consumer group** (multiple
-consumers under one group name).\
+consumers under one group name).
 Kafka assigns partitions across consumers in the group.
 
-Example:\
-- 3 partitions → 3 consumers → each consumer handles 1 partition.\
+Example:
+- 3 partitions → 3 consumers → each consumer handles 1 partition.
 - If a 4th consumer joins, it remains idle until one consumer goes
-down.\
+down.
 - If a consumer fails, Kafka rebalances partitions automatically.
 
 ### Zookeeper
 
-Zookeeper is used by Kafka for cluster coordination.\
+Zookeeper is used by Kafka for cluster coordination.
 It tracks Kafka brokers, topics, partitions, and offsets.
 
 ------------------------------------------------------------------------
 
 # Kafka Installation
 
--   **Open source**: https://kafka.apache.org/downloads\
--   **Commercial distribution**: https://www.confluent.io/get-started/?product=self-managed Register and download\
+-   **Open source**: https://kafka.apache.org/downloads
+-   **Commercial distribution**: https://www.confluent.io/get-started/?product=self-managed Register and download
 -   **Managed service**: Confluent Cloud, AWS MSK
 
 ### Tools
@@ -135,7 +135,7 @@ It tracks Kafka brokers, topics, partitions, and offsets.
 
 ### Default Ports
 
--   **Zookeeper**: 2181\
+-   **Zookeeper**: 2181
 -   **Kafka Server**: 9092
 
 
