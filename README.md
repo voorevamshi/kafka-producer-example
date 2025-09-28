@@ -141,7 +141,7 @@ It tracks Kafka brokers, topics, partitions, and offsets.
 
 ## Open Source Kafka Startup in local ##
 
-1. Start Zookeeper Server
+1. Start Zookeeper Server in Windows PowerShall
 
     ```.\bin\windows\zookeeper-server-start.bat .\config\zookeeper.properties ```
 
