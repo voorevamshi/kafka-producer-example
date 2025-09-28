@@ -127,6 +127,7 @@ It tracks Kafka brokers, topics, partitions, and offsets.
 -   **Open source**: https://kafka.apache.org/downloads
 -   **Commercial distribution**: https://www.confluent.io/get-started/?product=self-managed Register and download
 -   **Managed service**: Confluent Cloud, AWS MSK
+-   **GUI**: Use Offset Explorer Tool
 
 ### Tools
 
